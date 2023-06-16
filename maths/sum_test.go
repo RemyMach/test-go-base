@@ -1,10 +1,11 @@
 package maths
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func TestSum(t *testing.T) {
-	total := Sum(5, 5)
-	if total != 10 {
-		t.Errorf("Sum was incorrect, got: %d, want: %d.", total, 10)
-	}
+	assert.EqualValues(t, Sum(5, 5), 10, "given two number when they are add we should see the sum!")
 }

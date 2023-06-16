@@ -1,0 +1,24 @@
+.PHONY: run
+run:
+	go run main.go
+
+.PHONY: dev
+dev:
+	CompileDaemon -build="go build -o main" -command="./main"
+
+.PHONY: test
+test:
+	go test ./...
+
+.PHONY: test-cover
+test-cover:
+	go test -cover ./...
+
+.PHONY: test-cover-output
+test-cover-output:
+	go test ./... -coverprofile=coverage.out
+	go tool cover -html=coverage.out
+
+.PHONY: build
+build:
+	go build -o myapp main.go
