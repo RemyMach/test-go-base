@@ -10,6 +10,14 @@ dev:
 test:
 	go test ./...
 
+.PHONY: test-verbose
+test-verbose:
+	go test -v ./...
+
+.PHONY: test-no-cache
+test-no-cache:
+	go test -count=1 ./...
+
 .PHONY: test-cover
 test-cover:
 	go test -cover ./...
