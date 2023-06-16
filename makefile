@@ -14,6 +14,10 @@ test:
 test-verbose:
 	go test -v ./...
 
+.PHONY: test-bench
+test-bench:
+	go test -bench=.
+
 .PHONY: test-no-cache
 test-no-cache:
 	go test -count=1 ./...
